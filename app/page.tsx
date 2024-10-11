@@ -43,9 +43,8 @@ export default function Home() {
       section.scrollIntoView({ behavior: 'smooth' })
     }
   }
-
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const cursor = document.querySelector('.cursor') as HTMLElement
       if (cursor) {
         cursor.style.left = e.clientX + 'px'
@@ -213,11 +212,10 @@ export default function Home() {
                 key={index}
                 className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 whileHover={{ scale: 1.05 }}
-                onClick={() => setActiveProject(project)}
+                onClick={() => setActiveProject(project as any)}
               >
                 <div className="relative w-full h-48">
                   <Image 
-                    src={project.image} 
                     alt={project.title} 
                     layout="fill" 
                     objectFit="cover"
@@ -258,17 +256,17 @@ export default function Home() {
       {activeProject && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50" onClick={() => setActiveProject(null)}>
           <div className="bg-gray-800 p-8 rounded-lg max-w-2xl" onClick={e => e.stopPropagation()}>
-            <h3 className="text-2xl font-bold mb-4">{activeProject.title}</h3>
+            <h3 className="text-2xl font-bold mb-4">{activeProject?.title}</h3>
             <div className="relative w-full h-64 mb-4">
               <Image 
-                src={activeProject.image} 
-                alt={activeProject.title} 
+                src={activeProject?.image} 
+                alt={activeProject?.title} 
                 layout="fill" 
                 objectFit="cover" 
                 className="rounded"
               />
             </div>
-            <p className="text-gray-300 mb-4">{activeProject.description}</p>
+            <p className="text-gray-300 mb-4">{activeProject?.description}</p>
             <button className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition-colors" onClick={() => setActiveProject(null)}>
               Close
             </button>
