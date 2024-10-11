@@ -1,6 +1,4 @@
 'use client'
-
-import { useState } from 'react'
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDownIcon, GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
@@ -218,13 +216,12 @@ export default function Home() {
                 key={index}
                 className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 onClick={() => setActiveProject(project as any)}
-                onClick={() => setActiveProject(project)}
               >
                 <div className="relative w-full h-48">
                   <Image 
                     src={project.image}
-                    layout="fill" 
-                    objectFit="cover"
+                    alt={`Image for ${project.title}`}
+                    fill
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
