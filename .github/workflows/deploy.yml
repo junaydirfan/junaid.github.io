@@ -31,5 +31,6 @@ jobs:
         with:
           personal_token: ${{ secrets.PAT }}
           publish_dir: ./out
+          publish_branch: main  # Deploy to main branch for user sites
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'

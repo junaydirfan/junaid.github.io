@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDownIcon, GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
@@ -14,7 +15,6 @@ interface Project {
   description: string;
   image: string;
 }
-
 const BASE_PATH = process.env.NODE_ENV === 'production' ? '/junaid.github.io' : '';
 
 export default function Home() {
@@ -217,14 +217,14 @@ export default function Home() {
               <motion.div 
                 key={index}
                 className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                whileHover={{ scale: 1.05 }}
+                onClick={() => setActiveProject(project as any)}
                 onClick={() => setActiveProject(project)}
               >
                 <div className="relative w-full h-48">
                   <Image 
                     src={project.image}
-                    alt={project.title} 
-                    fill
+                    layout="fill" 
+                    objectFit="cover"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
@@ -290,5 +290,4 @@ export default function Home() {
         </button>
       </div>
     </div>
-  )
-}
+ }
