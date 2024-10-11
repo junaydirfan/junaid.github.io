@@ -9,8 +9,15 @@ import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Define the Project interface
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+}
+
 export default function Home() {
-  const [activeProject, setActiveProject] = useState(null)
+  const [activeProject, setActiveProject] = useState<Project | null>(null)
   const { scrollY } = useScroll()
   const router = useRouter()
   const basePath = router.basePath
@@ -18,8 +25,8 @@ export default function Home() {
   // Create transform values for each background element
   const yBg1 = useTransform(scrollY, [0, 1000], [0, -100])
   const yBg2 = useTransform(scrollY, [0, 1000], [0, -150])
-  
-  const projects = [
+
+  const projects: Project[] = [
     {
       title: 'SmartBallot: Blockchain Voting System',
       description: 'A secure and anonymous e-voting application utilizing NextJS, NestJS, and Solidity, ensuring vote integrity through blockchain and Zero-Knowledge Proofs (ZKP).',
