@@ -10,18 +10,18 @@ import { useRouter } from 'next/router'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const router = useRouter()
-  const basePath = router.basePath
-
   const [activeProject, setActiveProject] = useState(null)
   const { scrollY } = useScroll()
+  const router = useRouter()
+  const basePath = router.basePath
 
   // Create transform values for each background element
   const yBg1 = useTransform(scrollY, [0, 1000], [0, -100])
   const yBg2 = useTransform(scrollY, [0, 1000], [0, -150])
   const yBg3 = useTransform(scrollY, [0, 1000], [0, -200])
-  const yBg4 = useTransform(scrollY, [0, 1000], [0, -250])
-  const yBg5 = useTransform(scrollY, [0, 1000], [0, -300])
+  // Remove unused variables
+  // const yBg4 = useTransform(scrollY, [0, 1000], [0, -250])
+  // const yBg5 = useTransform(scrollY, [0, 1000], [0, -300])
 
   const projects = [
     {
@@ -32,12 +32,12 @@ export default function Home() {
     {
       title: 'Bulletin Board Server',
       description: 'A multi-threaded bulletin board server in C with thread pool architecture, implementing Readers-Writers lock and two-phase commit protocol.',
-      image: '/placeholder.svg?height=400&width=600',
+      image: `${basePath}/placeholder.svg?height=400&width=600`,
     },
     {
       title: 'Days Untold: Virtual Reality Game',
       description: 'A VR game developed using Unity engine, supporting the latest VR hardware like Meta Quest.',
-      image: '/placeholder.svg?height=400&width=600',
+      image: `${basePath}/placeholder.svg?height=400&width=600`,
     },
   ]
 
@@ -108,7 +108,6 @@ export default function Home() {
             repeatType: "reverse",
             ease: "easeInOut",
           }}
-          style={{ y: yBg3 }}
         />
         <motion.div 
           className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"
@@ -188,10 +187,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <p className="text-lg mb-4">
-                I'm a passionate software developer based in Sherbrooke, QC, currently pursuing my Master's in Computer Science at Bishop's University. With a strong foundation in web development, data science, and UI/UX design, I strive to create innovative and user-friendly solutions.
+                I&apos;m a passionate software developer based in Sherbrooke, QC, currently pursuing my Master&apos;s in Computer Science at Bishop&apos;s University. With a strong foundation in web development, data science, and UI/UX design, I strive to create innovative and user-friendly solutions.
               </p>
               <p className="text-lg">
-                My technical skills span across various programming languages and frameworks, allowing me to tackle diverse projects and challenges. I'm particularly enthusiastic about the intersection of technology and design, always aiming to deliver visually appealing and functionally robust applications.
+                My technical skills span across various programming languages and frameworks, allowing me to tackle diverse projects and challenges. I&apos;m particularly enthusiastic about the intersection of technology and design, always aiming to deliver visually appealing and functionally robust applications.
               </p>
             </div>
             <div>
