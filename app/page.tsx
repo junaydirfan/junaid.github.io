@@ -42,6 +42,21 @@ export default function Home() {
       description: 'A VR game developed using Unity engine, supporting the latest VR hardware like Meta Quest.',
       image: `${basePath}/placeholder.svg`,
     },
+    {
+      image: "https://techvify-software.com/wp-content/uploads/2023/06/bockchain.jpg",
+      title: "Blockchain Project",
+      description: "A decentralized application leveraging blockchain technology.",
+    },
+    {
+      image: "https://cdn.britannica.com/61/214561-050-1C1E4A57/fiber-optic-cables-connected-to-computer-network-server.jpg",
+      title: "Networking Project",
+      description: "Advanced networking solution for improved connectivity.",
+    },
+    {
+      image: "https://www.verizon.com/about/sites/default/files/styles/webp_style/public/2023-06/vr-for-kids-1230x690.webp",
+      title: "VR Experience",
+      description: "Immersive virtual reality application for education and entertainment.",
+    }
   ]
 
   const scrollToSection = (sectionId: string) => {
