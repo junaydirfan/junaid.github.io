@@ -235,7 +235,7 @@ export default function Home() {
         <section id="contact" className="py-20 text-center">
           <h3 className="text-3xl font-bold mb-8">Get In Touch</h3>
           <p className="text-xl mb-8">
-            I'm always open to new opportunities and collaborations. Feel free to reach out!
+            I&apos;m always open to new opportunities and collaborations. Feel free to reach out!
           </p>
           <div className="flex justify-center space-x-6">
             <a href="mailto:JUNAID.IRFAN@HOTMAIL.COM" className="text-white hover:text-gray-300 transition-colors">
