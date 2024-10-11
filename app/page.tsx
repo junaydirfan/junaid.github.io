@@ -18,11 +18,7 @@ export default function Home() {
   // Create transform values for each background element
   const yBg1 = useTransform(scrollY, [0, 1000], [0, -100])
   const yBg2 = useTransform(scrollY, [0, 1000], [0, -150])
-  const yBg3 = useTransform(scrollY, [0, 1000], [0, -200])
-  // Remove unused variables
-  // const yBg4 = useTransform(scrollY, [0, 1000], [0, -250])
-  // const yBg5 = useTransform(scrollY, [0, 1000], [0, -300])
-
+  
   const projects = [
     {
       title: 'SmartBallot: Blockchain Voting System',
@@ -239,7 +235,7 @@ export default function Home() {
         <section id="contact" className="py-20 text-center">
           <h3 className="text-3xl font-bold mb-8">Get In Touch</h3>
           <p className="text-xl mb-8">
-            I'm always open to new opportunities and collaborations. Feel free to reach out!
+            I&apos;m always open to new opportunities and collaborations. Feel free to reach out!
           </p>
           <div className="flex justify-center space-x-6">
             <a href="mailto:JUNAID.IRFAN@HOTMAIL.COM" className="text-white hover:text-gray-300 transition-colors">
