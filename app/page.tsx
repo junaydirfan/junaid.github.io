@@ -23,17 +23,17 @@ export default function Home() {
     {
       title: 'SmartBallot: Blockchain Voting System',
       description: 'A secure and anonymous e-voting application utilizing NextJS, NestJS, and Solidity, ensuring vote integrity through blockchain and Zero-Knowledge Proofs (ZKP).',
-      image: `${basePath}/placeholder.svg?height=400&width=600`,
+      image: `${basePath}/placeholder.svg`,
     },
     {
       title: 'Bulletin Board Server',
       description: 'A multi-threaded bulletin board server in C with thread pool architecture, implementing Readers-Writers lock and two-phase commit protocol.',
-      image: `${basePath}/placeholder.svg?height=400&width=600`,
+      image: `${basePath}/placeholder.svg`,
     },
     {
       title: 'Days Untold: Virtual Reality Game',
       description: 'A VR game developed using Unity engine, supporting the latest VR hardware like Meta Quest.',
-      image: `${basePath}/placeholder.svg?height=400&width=600`,
+      image: `${basePath}/placeholder.svg`,
     },
   ]
 
@@ -216,6 +216,7 @@ export default function Home() {
               >
                 <div className="relative w-full h-48">
                   <Image 
+                    src={project.image}
                     alt={project.title} 
                     layout="fill" 
                     objectFit="cover"
