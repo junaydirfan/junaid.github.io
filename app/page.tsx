@@ -1,11 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDownIcon, GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,32 +15,17 @@ interface Project {
   image: string;
 }
 
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/junaid.github.io' : '';
+
 export default function Home() {
   const [activeProject, setActiveProject] = useState<Project | null>(null)
   const { scrollY } = useScroll()
-  const router = useRouter()
-  const basePath = router.basePath
 
   // Create transform values for each background element
   const yBg1 = useTransform(scrollY, [0, 1000], [0, -100])
   const yBg2 = useTransform(scrollY, [0, 1000], [0, -150])
 
   const projects: Project[] = [
-    {
-      title: 'SmartBallot: Blockchain Voting System',
-      description: 'A secure and anonymous e-voting application utilizing NextJS, NestJS, and Solidity, ensuring vote integrity through blockchain and Zero-Knowledge Proofs (ZKP).',
-      image: `${basePath}/placeholder.svg`,
-    },
-    {
-      title: 'Bulletin Board Server',
-      description: 'A multi-threaded bulletin board server in C with thread pool architecture, implementing Readers-Writers lock and two-phase commit protocol.',
-      image: `${basePath}/placeholder.svg`,
-    },
-    {
-      title: 'Days Untold: Virtual Reality Game',
-      description: 'A VR game developed using Unity engine, supporting the latest VR hardware like Meta Quest.',
-      image: `${basePath}/placeholder.svg`,
-    },
     {
       image: "https://techvify-software.com/wp-content/uploads/2023/06/bockchain.jpg",
       title: "Blockchain Project",
@@ -234,14 +218,14 @@ export default function Home() {
                 key={index}
                 className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 whileHover={{ scale: 1.05 }}
-                onClick={() => setActiveProject(project as any)}
+                onClick={() => setActiveProject(project)}
               >
                 <div className="relative w-full h-48">
                   <Image 
                     src={project.image}
                     alt={project.title} 
-                    layout="fill" 
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className="p-6">
