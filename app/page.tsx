@@ -13,7 +13,6 @@ interface Project {
   description: string;
   image: string;
 }
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/junaid.github.io' : '';
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState<Project | null>(null)

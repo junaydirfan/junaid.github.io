@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next build && next export",
-    "deploy": "gh-pages -d out -b gh-pages"
+    "start": "next start"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
