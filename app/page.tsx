@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDownIcon, GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
+import imageLoader from '../imageLoader'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -218,9 +219,11 @@ export default function Home() {
               >
                 <div className="relative w-full h-48">
                   <Image 
+                    loader={imageLoader}
                     src={project.image}
                     alt={`Image for ${project.title}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
@@ -262,10 +265,12 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-4">{activeProject?.title}</h3>
             <div className="relative w-full h-64 mb-4">
               <Image 
+                loader={imageLoader}
                 src={activeProject?.image} 
                 alt={activeProject?.title} 
-                layout="fill" 
-                objectFit="cover" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: 'cover' }}
                 className="rounded"
               />
             </div>

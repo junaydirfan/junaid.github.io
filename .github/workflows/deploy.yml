@@ -30,6 +30,3 @@ jobs:
           personal_token: ${{ secrets.PAT }}
           publish_dir: ./out
           cname: junaid.github.io
-          publish_branch: gh-pages
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
