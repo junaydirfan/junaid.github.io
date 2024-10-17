@@ -2,10 +2,11 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,6 +32,7 @@ jobs:
         with:
           personal_token: ${{ secrets.PAT }}
           publish_dir: ./out
-          publish_branch: main  # Deploy to main branch for user sites
+          cname: junaid.github.io
+          publish_branch: gh-pages
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
