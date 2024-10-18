@@ -9,6 +9,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'techvify-software.com',
+        pathname: '/wp-content/uploads/**',
       },
       {
         protocol: 'https',
@@ -17,6 +18,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.verizon.com',
+        pathname: '/about/sites/default/files/**',
       },
     ],
   },
