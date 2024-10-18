@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDownIcon, GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import { Inter } from 'next/font/google'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,17 +24,17 @@ export default function Home() {
 
   const projects: Project[] = [
     {
-      image: "", // Remove image URLs
+      image: "https://techvify-software.com/wp-content/uploads/2023/06/bockchain.jpg",
       title: "Blockchain Project",
       description: "A decentralized application leveraging blockchain technology.",
     },
     {
-      image: "", // Remove image URLs
+      image: "https://cdn.britannica.com/61/214561-050-1C1E4A57/fiber-optic-cables-connected-to-computer-network-server.jpg",
       title: "Networking Project",
       description: "Advanced networking solution for improved connectivity.",
     },
     {
-      image: "", // Remove image URLs
+      image: "https://www.verizon.com/about/sites/default/files/styles/webp_style/public/2023-06/vr-for-kids-1230x690.webp",
       title: "VR Experience",
       description: "Immersive virtual reality application for education and entertainment.",
     }
@@ -215,6 +216,15 @@ export default function Home() {
                 className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 onClick={() => setActiveProject(project as any)}
               >
+                <div className="relative w-full h-48">
+                  <Image 
+                    src={project.image}
+                    alt={`Image for ${project.title}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover', position: 'relative' }}
+                  />
+                </div>
                 <div className="p-6">
                   <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
                   <p className="text-gray-400">{project.description}</p>
@@ -251,6 +261,16 @@ export default function Home() {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50" onClick={() => setActiveProject(null)}>
           <div className="bg-gray-800 p-8 rounded-lg max-w-2xl" onClick={e => e.stopPropagation()}>
             <h3 className="text-2xl font-bold mb-4">{activeProject?.title}</h3>
+            <div className="relative w-full h-64 mb-4">
+              <Image 
+                src={activeProject?.image} 
+                alt={activeProject?.title} 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: 'cover', position: 'relative' }}
+                className="rounded"
+              />
+            </div>
             <p className="text-gray-300 mb-4">{activeProject?.description}</p>
             <button className="bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition-colors" onClick={() => setActiveProject(null)}>
               Close
