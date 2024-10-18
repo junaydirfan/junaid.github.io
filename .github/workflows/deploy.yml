@@ -29,4 +29,4 @@ jobs:
         with:
           personal_token: ${{ secrets.PAT }}
           publish_dir: ./out
-          cname: junaid.github.io
+          cname: junaydirfan.github.io

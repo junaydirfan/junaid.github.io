@@ -222,7 +222,7 @@ export default function Home() {
                     alt={`Image for ${project.title}`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', position: 'relative' }}
                   />
                 </div>
                 <div className="p-6">
@@ -267,7 +267,7 @@ export default function Home() {
                 alt={activeProject?.title} 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', position: 'relative' }}
                 className="rounded"
               />
             </div>

@@ -1,8 +1,8 @@
 {
-  "name": "junaid.github.io",
+  "name": "junaydirfan.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://junaid.github.io",
+  "homepage": "https://junaydirfan.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
